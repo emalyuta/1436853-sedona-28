@@ -28,6 +28,7 @@ body {
   margin: 0;
   padding: 0;
   font-family: "PT Sans", Arial, sans-serif;
+  font-weight: normal;
   font-size: 14px;
   line-height: 21px;
   color: var(--black);
@@ -88,7 +89,6 @@ a {
 .site-navigation .active {
   color: var(--brown-light);
 }
-
 
 /* Description */
 
@@ -182,8 +182,8 @@ a {
   color: rgba(255, 255, 255, 0.3);
 }
 
-
 /* Find-hotel */
+
 .find-hotel {
   text-align: center;
 }
@@ -198,7 +198,6 @@ a {
   color: var(--gray-dark-500);
   line-height: 24px;
 }
-
 
 .find-hotel-button {
   font-weight: bold;
@@ -223,7 +222,6 @@ a {
   padding-left: 13px;
 }
 
-/* remove arrows for number inputs */
 .find-hotel-form input::-webkit-outer-spin-button,
 .find-hotel-form input::-webkit-inner-spin-button {
   -webkit-appearance: none;
@@ -270,7 +268,6 @@ a {
 .counter-button:active {
   color: var(--blue-light);
 }
-
 
 /* Page footer */
 
