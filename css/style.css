@@ -383,3 +383,141 @@ a {
   color: var(--gray-dark-300);
   background-color: var(--whitesmoke-light);
 }
+
+/* Filters */
+
+.filter-form-container {
+  background-color: var(--blue-dark);
+  background-image: url("../img/description-background.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.filter-form {
+  color: var(--white);
+  backdrop-filter: blur(10px);
+}
+
+.filter-form legend {
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.filter-form ul {
+  list-style: none;
+}
+
+.filter-option label {
+  position: relative;
+  display: block;
+  cursor: pointer;
+  user-select: none;
+}
+
+.filter-input-checkbox + label::before {
+  background: url("../img/checkbox-off.svg");
+  content: "";
+  position: absolute;
+  left: -42px;
+  top: 0;
+  width: 27px;
+  height: 23px;
+  background-repeat: no-repeat;
+  background-position: 0 0;
+}
+
+.filter-input-checkbox:checked + label::before {
+  background-image: url("../img/checkbox-on.svg");
+}
+
+/* Not works */
+.filter-input-checkbox:disabled + label::before {
+  fill: var(--gray-dark);
+}
+
+.price-controls input {
+  font: inherit;
+  text-transform: uppercase;
+  border: 0;
+  background-color: transparent;
+  outline: none;
+  padding-left: 5px;
+  color: var(--white);
+}
+
+.price-controls input::-webkit-outer-spin-button,
+.price-controls input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0
+}
+
+.filter-submit-button {
+  background-color: transparent;
+  border-radius: 2px;
+  border: 2px solid var(--white);
+  color: var(--white);
+}
+
+.filter-submit-button:hover,
+.filter-submit-button:focus {
+  background-color: var(--white);
+  border-radius: 2px;
+  border: 2px solid var(--white);
+  color: var(--black);
+}
+
+.results-count {
+  font-weight: bold;
+  font-size: 21px;
+  line-height: 26px;
+}
+
+.results-sort .sort-type {
+  font-size: 12px;
+  line-height: 18px;
+}
+
+.sort-type-list {
+  list-style: none;
+}
+
+.sort-type-list a {
+  color: rgba(0, 0, 0, 0.3);
+  border-bottom: 1px dashed var(--blue-light);
+}
+
+.sort-type-list a:hover,
+.sort-type-list a:focus {
+  color: var(--blue-light);
+}
+
+.sort-type-list a:active {
+  color: var(--black);
+  border: none;
+}
+
+.sort-type-list .active {
+  color: var(--blue-light);
+  border: none;
+}
+
+.sort-order-list {
+  list-style: none;
+}
+
+.sort-order-link path{
+  fill: var(--gray-light-100);
+}
+
+.sort-order-link:hover path,
+.sort-order-link:focus path {
+  fill: var(--black);
+}
+
+.sort-order-link:active path {
+  fill: var(--blue-light);
+}
+
+.sort-order-link-active path {
+  fill: var(--blue-light);
+}
