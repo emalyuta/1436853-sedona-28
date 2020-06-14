@@ -57,6 +57,8 @@ a {
 
 .page-body {
   height: 100%;
+  padding-left: 10px;
+  padding-right: 10px;
 }
 
 .page-body-wrap {
@@ -187,7 +189,8 @@ a {
   margin: 0;
   padding: 0;
   display: flex;
-  flex-direction: column;
+  flex-grow: 1;
+  flex-wrap: wrap;
 }
 
 .advantages-sublist {
@@ -195,12 +198,14 @@ a {
   margin: 0;
   padding: 0;
   display: flex;
-  flex-direction: row;
+  flex-grow: 1;
   padding-bottom: 82px;
 }
 
-.advantage-item-row {
+.advantage-item {
   display: flex;
+  flex-wrap: wrap;
+  flex-grow: 1;
 }
 
 .advantage-item .title {
@@ -241,8 +246,7 @@ a {
 }
 
 .advantage-item-colorized .description {
-  margin-left: 49px;
-  margin-right: 49px;
+  width: 310px;
   padding-bottom: 25px;
 }
 
@@ -262,8 +266,7 @@ a {
 }
 
 .advantage-item-dark .description {
-  margin-left: 71px;
-  margin-right: 71px;
+  width: 280px;
   padding-bottom: 25px;
 }
 
@@ -462,9 +465,10 @@ a {
 }
 
 .find-hotel-form .counter-input {
-  width: inherit;
+  width: 27px;
   text-align: center;
   padding-left: 2px;
+  -moz-appearance: textfield;
 }
 
 .datepicker-button {
@@ -520,18 +524,22 @@ a {
   padding-bottom: 16px;
 }
 
+/* Map */
+.map img {
+  display: block;
+}
+
 /* Filters */
 
 .filter-form-container {
   background-color: var(--blue-dark);
-  background-image: url("../img/description-background.jpg");
+  background-image: url("../img/filter-background.jpg");
   background-position: 100% 72%;
   background-repeat: no-repeat;
 }
 
 .filter-form {
   color: var(--white);
-  backdrop-filter: blur(13px);
   padding-top: 26px;
   padding-right: 50px;
   padding-bottom: 8px;
@@ -541,11 +549,12 @@ a {
 }
 
 .filter-fieldset {
-  width: 243px;
+  width: 230px;
   border: none;
   margin: 0;
   padding: 0;
   padding-left: 12px;
+  padding-right: 13px;
 }
 
 .filter-fieldset label {
@@ -600,7 +609,8 @@ a {
 }
 
 .price-button-container {
-  padding-left: 241px;
+  margin-left: auto;
+  width: 360px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -638,6 +648,7 @@ a {
   padding-top: 5px;
   width: 70px;
   color: var(--white);
+  -moz-appearance: textfield;
 }
 
 .price-controls label:nth-child(1){
@@ -946,12 +957,12 @@ a {
 
 .page-footer {
   background-color: rgba(255, 255, 255, 0.9);
-  padding-top: 15px;
-  padding-bottom: 21px;
+  padding-top: 14px;
+  padding-bottom: 20px;
 }
 
 .main-page-footer {
-  margin-top: -126px;
+  margin-top: -120px;
 }
 
 .page-footer .container {
@@ -976,7 +987,6 @@ a {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding-top: 5px;
 }
 
 .footer-social ul {
@@ -987,6 +997,7 @@ a {
   display: flex;
   justify-content: center;
   align-items: center;
+  padding-top: 6px;
 }
 
 .social-button {
