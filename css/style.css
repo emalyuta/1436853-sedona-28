@@ -64,6 +64,7 @@ a {
 .page-body-wrap {
   min-height: 100%;
   display: grid;
+  grid-template-rows: -webkit-min-content 1fr -webkit-min-content;
   grid-template-rows: min-content 1fr min-content;
   align-content: start;
   width: 1200px;
@@ -216,6 +217,10 @@ a {
 .advantage-item h4,
 .advantage-item p {
   margin: 0;
+}
+
+.advantage-item img {
+  max-height: 256px;
 }
 
 .advantage-item-colorized,
@@ -392,20 +397,36 @@ a {
   width: 568px;
 }
 
+.find-hotel-form-container {
+  overflow-y: hidden;
+  position: absolute;
+  z-index: 1;
+  left: calc(50% - 568px/2);
+}
+
 .find-hotel-form {
   text-align: initial;
   font-weight: bold;
-  position: absolute;
   background-color: var(--white);
   box-shadow: 0px 7px 15px rgba(0, 1, 1, 0.15);
   width: 458px;
-  left: calc(50% - 568px/2);
   z-index: 2;
   padding: 55px;
-  display: grid;
+  display: none;
   grid-template-columns: 112px 114px 118px 114px;
   align-items: center;
   row-gap: 24px;
+}
+
+.find-hotel-form-show {
+  display: grid;
+  -webkit-animation: slide-in 1s;
+          animation: slide-in 1s;
+}
+
+.find-hotel-form-error {
+  -webkit-animation: shake 0.6s;
+          animation: shake 0.6s;
 }
 
 .find-hotel-form label {
@@ -525,17 +546,29 @@ a {
 }
 
 /* Map */
+
+.map {
+  background-color: var(--gray-light);
+}
+
 .map img {
   display: block;
+}
+
+.map iframe {
+  display: block;
+  border: none;
+  position: absolute;
 }
 
 /* Filters */
 
 .filter-form-container {
-  background-color: var(--blue-dark);
+  background-color: var(--brown-dark);
   background-image: url("../img/filter-background.jpg");
   background-position: 100% 72%;
   background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .filter-form {
@@ -584,7 +617,9 @@ a {
   position: relative;
   display: block;
   cursor: pointer;
-  user-select: none;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
 }
 
 .filter-input-checkbox + label::before {
@@ -603,7 +638,6 @@ a {
   background-image: url("../img/checkbox-on.svg");
 }
 
-/* Not work */
 .filter-input-checkbox:disabled + label::before {
   fill: var(--gray-dark);
 }
@@ -693,6 +727,7 @@ a {
   height: 21px;
   background-repeat: no-repeat;
   background-position: 0;
+  border: none;
 }
 
 .range-controls .toggle:focus,
@@ -899,8 +934,10 @@ a {
 
 .hotel-item-main .description {
   display: grid;
+  grid-template-columns: -webkit-min-content -webkit-min-content;
   grid-template-columns: min-content min-content;
-  column-gap: 6px;
+  -moz-column-gap: 6px;
+       column-gap: 6px;
   row-gap: 15px;
   text-align: left;
 }
@@ -963,6 +1000,8 @@ a {
 
 .main-page-footer {
   margin-top: -120px;
+  z-index: 2;
+  opacity: 0.9;
 }
 
 .page-footer .container {
@@ -981,6 +1020,10 @@ a {
 
 .footer-contacts p {
   margin: 8.5px;
+}
+
+.footer-contacts a {
+  color: var(--black);
 }
 
 .footer-social {
@@ -1054,4 +1097,70 @@ a {
 
 .copyright-button:active path {
   fill: var(--gray-light-200);
+}
+
+/* Animations */
+
+@-webkit-keyframes slide-in {
+  0% {
+    transform: translateY(-100%);
+  }
+
+  100% {
+    transform: translateY(0%);
+  }
+}
+
+@keyframes slide-in {
+  0% {
+    transform: translateY(-100%);
+  }
+
+  100% {
+    transform: translateY(0%);
+  }
+}
+
+@-webkit-keyframes shake {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+
+  10%,
+  30%,
+  50%,
+  70%,
+  90% {
+    transform: translateX(-10px);
+  }
+
+  20%,
+  40%,
+  60%,
+  80% {
+    transform: translateX(10px);
+  }
+}
+
+@keyframes shake {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+
+  10%,
+  30%,
+  50%,
+  70%,
+  90% {
+    transform: translateX(-10px);
+  }
+
+  20%,
+  40%,
+  60%,
+  80% {
+    transform: translateX(10px);
+  }
 }
