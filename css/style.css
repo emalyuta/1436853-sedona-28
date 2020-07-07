@@ -219,10 +219,6 @@ a {
   margin: 0;
 }
 
-.advantage-item img {
-  max-height: 256px;
-}
-
 .advantage-item-colorized,
 .advantage-subitem,
 .advantage-item-dark {
@@ -634,12 +630,26 @@ a {
   background-position: 0 0;
 }
 
+.filter-input-checkbox:focus + label::before {
+  outline: auto 1px -webkit-focus-ring-color;
+  box-shadow: 0 0 0 1px var(--white);
+}
+
 .filter-input-checkbox:checked + label::before {
   background-image: url("../img/checkbox-on.svg");
 }
 
+.filter-input-checkbox:checked:focus + label::before {
+  outline: auto 1px -webkit-focus-ring-color;
+  box-shadow: 0 0 0 1px var(--white);
+}
+
 .filter-input-checkbox:disabled + label::before {
-  fill: var(--gray-dark);
+  background-image: url("../img/checkbox-off-disabled.svg");
+}
+
+.filter-input-checkbox:checked:disabled + label::before {
+  background-image: url("../img/checkbox-on-disabled.svg");
 }
 
 .price-button-container {
